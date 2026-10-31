@@ -1,82 +1,110 @@
 <!DOCTYPE HTML>
 <html lang="fr">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">       
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/basic.css" rel="stylesheet" type="text/css">
         <link href="css/modal.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>Projets Photoshop — Perrine Goget</title>
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-    <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-    <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="conteneur_page">
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
- 
-    <h1> 
-        Photoshop
-    </h1>
-<div class="mon_texte">
-<p id="liste_gauche"> 
-Mon premier projet était de réaliser une photo d'un fantôme.  <br>J'ai procédé en 3 étapes : <br>- tout d'abord j'ai pris des photos avec un fond vert<br>- puis j'ai photographié le décor<br>- et enfin j'ai créé mon image avec le logiciel Gimp.
-</p>
-</div>
-<div class="grille">
-	<div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/PS_fantome.jpg" alt="Photo de ma soeur en fantome final">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/PS_lieux.jpg" alt="photo du lieux">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/PS_soeur.jpg" alt="photo de ma soeur sur fond vert." class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/PS_loopy.jpg" alt="photo de Loopy sur fond vert." class="portrait">
-    </div>
+        <h1>Photoshop</h1>
+        <h2>Mon premier projet était de réaliser une photo d'un fantôme.
+        </h2>
+        <!-- Texte intro -->
+        <div class="text-block">
+            <p> 
+                J'ai procédé en 3 étapes : <br>- tout d'abord j'ai pris des photos avec un fond vert<br>- puis j'ai photographié le décor<br>- et enfin j'ai créé mon image avec le logiciel Gimp.
+            </p>
+        </div>
+        <!-- Mockups -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/PS_fantome.jpg" alt="Photo de ma soeur en fantome final">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/PS_lieux.jpg" alt="photo du lieux">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/PS_soeur.jpg" alt="photo de ma soeur sur fond vert." class="portrait">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/PS_loopy.jpg" alt="photo de Loopy sur fond vert." class="portrait">
+            </div>
+        </div>
 
-</div>
+        <!-- Texte intro -->
+        <div class="text-block">
+            <p> 
+                Je voulais une jolie photo de moi, mais comme l'arrière plan n'était pas très beau.<br> J'ai retouché ma photo en mettant en pratique mes cours de Photoshop.
+            </p>
+        </div>
 
-<p> 
-Je voulais une jolie photo de moi, mais comme l'arrière plan n'était pas très beau.<br> J'ai retouché ma photo en mettant en pratique mes cours de Photoshop.
-</p>
-
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/photo_linkdin.jpeg" alt="photo de linkedIn (base)" class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/photo_linkdinv2.png" alt="photo de linkedIn (fond du style de ma banière)" class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/photo_linkdinv3.png" alt="photo de linkedIn (Fond bleu ciel)" class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img class="photoshop_img" src="image/phtotoshop/photo_linkdinv4.png" alt="photo de linkedIn (Fond bleu plus foncé)" class="portrait">
-    </div>
-</div>
-
-
-
-<div class="modal"  onclick="closeModal()">
-    <img class="modal-image" src="">
-</div>
-<script src="javascript/open_modal.js"></script>
+        <!-- Mockups -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/photo_linkdin.jpeg" alt="photo de linkedIn (base)" class="portrait">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/photo_linkdinv2.png" alt="photo de linkedIn (fond du style de ma banière)" class="portrait">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/photo_linkdinv3.png" alt="photo de linkedIn (Fond bleu ciel)" class="portrait">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="photoshop_img" src="image/phtotoshop/photo_linkdinv4.png" alt="photo de linkedIn (Fond bleu plus foncé)" class="portrait">
+            </div>
+        </div>
 
 
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
+        <!-- Modal -->
+        <div class="modal" onclick="closeModal()">
+            <img class="modal-image" src="" alt="Image agrandie">
+        </div>
 
-</div>
-  </body>
-</html> 
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="src/javascript/open_modal.js"></script>
+    <script src="src/javascript/livre_guide.js"></script>
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
+
+</body>
+</html>

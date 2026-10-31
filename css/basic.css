@@ -1,268 +1,283 @@
-/***********************************************************************************/
-/*                                                                                 */
-/*                                    LE CSS                                       */
-/*                                                                                 */
-/*                             I La base de mes pages                              */
-/***********************************************************************************/
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
 
-/* Le bas de la page  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-*{
-    margin: 0%;
-    padding: 0%;
-}/*Pour tout les élément je retire les marges et le padding*/
+:root {
+    /* --- Couleurs --- */
+    --color-primary:     rgb(251 248 255);
+    --color-dark-blue:   rgb(11 12 74);
+    --color-font-base:   rgb(48, 11, 97);
+    --color-text-navbar: white;
+
+    /* --- Dégradé --- */
+    --gradient-blue: 90deg, #1e3c72 10%, #2a5298 60%, #6dd5fa 100%;
+
+    /* --- Typographie --- */
+    --font-basics: 'Montserrat', Arial, sans-serif;
+
+    /* --- Transitions --- */
+    --transition-burger: transform 0.3s, opacity 0.3s;
+
+    /* --- Z-index --- */
+    --z-navbar: 10000;
+}
 
 body {
-    background-color: rgb(251 248 255);
-}/*Pour le corps je mes la couleurs de font*/
+    background-color: var(--color-primary);
+}
 
-/*************************************************************/
-/* II La barre de Navigation du Haut (le bandeau de la page) */
-/*************************************************************/
+/* ==========================================================================
+   2. NAVBAR — mobile first
+   ========================================================================== */
 
-header {
-    background-color: rgb(11 12 74) ;
+.header {
+    animation: fadeInDown 1.2s cubic-bezier(.5, 1.7, .9, .9);
+    letter-spacing: 1px;
+}
+
+.navbar__ {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(var(--gradient-blue));
     display: flex;
-}/* Dans le header je met une couleur de fond et mon display flex (pour m'assurer que les éléments fils directs seront alignés sur une ligne) */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px 22px;
+    z-index: var(--z-navbar);
+}
 
-nav {
-    width:100%;
-    height:15rem;
-    display:flex;
-    justify-content:center;
-} /* Dans la balise nav: je met l'image de ma bannière que je fait répéter sur l'axe x.  */
-/* L'image fera partie du background et je lui donne une taille et je la positionne à 20 pixels sur l'axe y  */
-/* Je dimentionne le tout  */
+.navbar__menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: linear-gradient(var(--gradient-blue));
+    padding: 12px 0;
+}
 
-.navig{
-    background-color: rgba(238,250,252,0.6);
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 25px;
-    height:3rem;
-    display: inline;
-    scroll-padding-bottom: 0px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 1.7rem;
-    color: white;
+.navbar__menu.is-open {
+    display: flex;
+    width: 100vw;
+    top: 8%;
+    padding-left: 2rem;
+    z-index: var(--z-navbar);
+}
+
+.navbar__link {
+    font-size: 0.96rem;
+    font-family: var(--font-basics);
     font-weight: bold;
-}/* Dans les balises de class navig ()   */
+    color: var(--color-text-navbar);
+    text-decoration: none;
+    padding: 12px 20px;
+    width: 50%;
+}
 
+.navbar__burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbar__burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: var(--transition-burger);
+}
+
+.navbar__burger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.navbar__burger.is-open span:nth-child(2) { opacity: 0; }
+.navbar__burger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Hover liens navbar */
 .url {
     text-decoration: none;
     background: conic-gradient(#a8a8fef7 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, .08em);
-    transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s));
+    transition: .3s var(--t, 0s), background-position .3s calc(.3s - var(--t, 0s));
 }
 
 .url:hover {
     --p: 100%;
     --t: .3s;
-    color : rgb(40, 27, 53);
+    color: rgb(40, 27, 53);
 }
 
-.conteneur_page {
-    padding-top: 50px;
-}
-
-
-.banner-construction {
-    height: 7vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    position: fixed;
-    background: linear-gradient(90deg, #1e3c72 10%, #2a5298 60%, #6dd5fa 100%);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1em;
-    font-weight: 500;
-    padding: 14px 0;
-    box-shadow: 0 2px 16px #1564ad33;
-    z-index: 10000;
-    gap: 16px;
-    animation: fadeInDown 1.2s cubic-bezier(.5, 1.7, .9, .9);
-    letter-spacing: 1px;
-    backdrop-filter: blur(2px);
-}
-
-.banner-icon {
-    font-size: 1.7em;
-    animation: rotateTool 1.6s infinite linear;
-    display: inline-block;
-    filter: drop-shadow(0 0 4px #6dd5fa55);
-}
-
-.banner-text {
-    animation: textGlow 2s infinite alternate;
-    text-shadow: 0 2px 8px #1e3c7290;
-}
+/* ==========================================================================
+   3. ANIMATIONS
+   ========================================================================== */
 
 @keyframes fadeInDown {
-    from {
-        transform: translateY(-40px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes rotateTool {
-    0%   { transform: rotate(-20deg);}
-    80%  { transform: rotate(25deg);}
-    100% { transform: rotate(-20deg);}
-}
-@keyframes textGlow {
-    0% { text-shadow: 0 2px 8px #6dd5fa66;}
-    100% { text-shadow: 0 2px 22px #6dd5fa;}
-}
-@media (max-width: 600px) {
-    .banner-construction {
-        font-size: 0.96em;
-        padding: 10px 0;
-        gap: 10px;
-    }
-    .banner-icon {
-        font-size: 1.3em;
-    }
+    from { transform: translateY(-40px); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
 }
 
-/**********************************************************************************/
-/*                  IV Le texte de la page perrine goget                          */
-/**********************************************************************************/
+@keyframes rotateTool {
+    0%   { transform: rotate(-20deg); }
+    80%  { transform: rotate(25deg);  }
+    100% { transform: rotate(-20deg); }
+}
+
+@keyframes textGlow {
+    0%   { text-shadow: 0 2px 8px  #6dd5fa66; }
+    100% { text-shadow: 0 2px 22px #6dd5fa;   }
+}
+
+/* ==========================================================================
+   4. LAYOUT GÉNÉRAL
+   ========================================================================== */
+
+.page-content {
+    padding-top: 80px;
+}
+
+/* ==========================================================================
+   5. TYPOGRAPHIE DE BASE — mobile first
+   ========================================================================== */
 
 h1 {
-    font-family: 'Montserrat', Arial, sans-serif;
-    margin: 150px;
+    font-family: var(--font-basics);
+    margin-top: 32px;
     text-align: center;
-    font-size: 70px;
-    color: rgb(48, 11, 97);
+    font-size: 40px;
+    color: var(--color-font-base);
 }
 
 h2 {
-    margin: 50px 0px 50px 0px;
+    font-family: var(--font-basics);
+    margin: 30px auto;
     text-align: center;
-    font-size: 40px;
-    color: rgb(48, 11, 97);
-    font-family: "Montserrat",  Arial, sans-serif;
-}
-
-
-@media (max-width: 900px) {
-  h1 { font-size: 2em; margin: 2em 0 1em 0; }
-  h2 { font-size: 1.2em; }
-  p  { font-size: 1.2em; min-width: 0; }
-  .mon_texte { font-size: 1.1em; }
-  .navig { font-size: 1em; padding: 14px 4px; }
-  nav { height: auto; min-height: 4rem; }
-  #footer_projet { font-size: 1em; }
-  #linki { width: 36px; }
-}
-
-@media (max-width: 600px) {
-  nav { flex-direction: column; gap: 0.2em; height: auto; }
-  .navig { font-size: 0.95em; min-width: 60px; padding: 8px; }
-  h1 { font-size: 1em; margin: 1.2em 0 0.7em 0; }
-  h2 { font-size: 0.95em; }
-  p { font-size: 1em; min-width: 0; }
-  .mon_texte { font-size: 0.98em; padding: 0.5em; }
-  #footer_projet { font-size: 0.8em; flex-direction: column; gap: 0.4em; }
-  #linki { width: 24px; margin-left: 0; }
+    font-size: 24px;
+    color: var(--color-font-base);
+    width: 75vw;
 }
 
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    font-size: 35px;
+    font-family: var(--font-basics);
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 1rem 1.5rem;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* ==========================================================================
+   6. SECTIONS MEDIA + TEXTE
+   ========================================================================== */
+
+.section--media-left,
+.section--media-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 5vw;
+    gap: 1.5rem;
+}
+
+.section__text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.section__text p {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    padding: 0;
+}
+
+/* ==========================================================================
+   7. BLOCS TEXTE
+   ========================================================================== */
+
+.text-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
     text-align: center;
-    font-family: "Montserrat",  Arial, sans-serif;
-    min-width : 60vh;
-    padding: 5rem;
 }
 
-.center {
+.text-block p {
+    text-align: left;
+    width: min(900px, 85vw);
+    max-width: 900px;
+    padding: 0 1rem;
+}
+
+.text-list {
+    padding: 2rem;
     text-align: left;
 }
 
+/* ==========================================================================
+   8. GALERIE D'IMAGES
+   ========================================================================== */
 
-div.mon_texte {
-    padding-top: 2rem;
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-
-#liste_gauche {
-    padding: 5rem;
-    margin-left: 10rem;
-    text-align: left;
+.gallery__item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
-
-.gauche {
-    display:flex;
-    align-items: center;
-    padding-top: 5rem;
-    padding-left: 15rem; 
-    padding-bottom: 5rem; 
-    padding-right: 15rem; 
+.gallery__item img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-.gauchiste {
-    padding-top: 0px;
-    text-align: left;
-    padding-right:5rem;
-    padding-left: 0px;
-    padding-bottom: 0px;
-    min-width : 60vh;
-    max-width : 80vh;
+.gallery__item:hover img {
+    transform: scale(1.03);
 }
 
+.gallery__img--large  { width: min(700px, 90vw); }
+.gallery__img--medium { width: min(340px, 42vw); }
+.gallery__img--square { width: min(400px, 80vw); height: auto; }
 
-.droite {
-        display:flex;
-    align-items: center;
-    padding-left: 15rem; 
-    padding-right: 15rem; 
-    padding-bottom: 5rem; 
-}
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
 
-
-.droitiste {
-    padding-top: 0px;
-    text-align: left;
-    padding-right:0px;
-    padding-left: 5rem;
-    padding-bottom: 0px;
-    min-width : 60vh;
-    max-width : 80vh;
-}
-
-#legume {
-    height: 35rem;
-}
-
-/**********************************************************************************/
-/*                                   VII Le footer                                 */
-/**********************************************************************************/
-
-
-
-#footer_projet{
-    background-color: rgb(11 12 74);
-    margin-top: 20vh;
-    padding-left: 10px;
-    padding-top: 10px;
+#footer_projet {
+    background-color: var(--color-dark-blue);
+    margin-top: 10vh;
+    padding: 10px;
     display: flex;
     align-items: center;
-    align-content: center;
-    font-family: 'Montserrat',  Arial, sans-serif;
-    font-size: 1.5em;
+    font-family: var(--font-basics);
+    font-size: 1em;
     color: white;
     font-weight: bold;
 }
@@ -273,4 +288,90 @@ div.mon_texte {
     background-color: white;
     border-radius: 10px;
     margin-left: 1rem;
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES — tablette (768px – 1023px)
+   ========================================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Navbar */
+    .navbar__ { justify-content: center; padding: 14px 0; gap: 12px; }
+    .navbar__burger { display: none; }
+    .navbar__menu { display: flex; flex-direction: row; position: static; width: auto; background: none; padding: 0; gap: 12px; }
+    .navbar__link { font-size: 1rem; padding: 10px 12px; width: auto; }
+
+    /* Typo */
+    h1 { font-size: 50px; margin-top: 30px; margin-bottom: 40px; }
+    h2 { font-size: 32px; margin: 40px auto; }
+    p  { font-size: 22px; }
+
+    /* Sections */
+    .section--media-left,
+    .section--media-right {
+        flex-direction: row;
+        padding: 3rem 5vw;
+        justify-content: center;
+    }
+
+
+
+    .section__text {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+
+    .section--media-left .gallery,
+    .section--media-right .gallery {
+        flex: 1 1 45%;
+        max-width: 45%;
+        justify-content: center;
+    }
+
+    /* Footer */
+    #footer_projet { font-size: 1.5em; padding-left: 10px; padding-top: 10px; }
+}
+
+/* ==========================================================================
+   11. MEDIA QUERIES — desktop (1024px+)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+
+    /* Navbar */
+    .navbar__ { justify-content: center; padding: 18px 0; gap: 16px; }
+    .navbar__burger { display: none; }
+    .navbar__menu { display: flex; flex-direction: row; position: static; width: auto; background: none; padding: 0; gap: 16px; }
+    .navbar__link { font-size: 1.2rem; padding: 12px 16px; width: auto; }
+
+    /* Typo */
+    h1 { font-size: 70px; margin-top: 40px; margin-bottom: 40px; }
+    h2 { font-size: 40px; margin: 50px auto; }
+    p  { font-size: 25px; padding: 2rem 5rem; }
+
+    /* Sections */
+    .section--media-left,
+    .section--media-right {
+        flex-direction: row;
+        padding: 3rem 5vw;
+        justify-content: center;
+    }
+
+
+
+    .section__text {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+
+    .section--media-left .gallery,
+    .section--media-right .gallery {
+        flex: 1 1 45%;
+        max-width: 45%;
+        justify-content: center;
+    }
+
+    /* Footer */
+    #footer_projet { font-size: 1.5em; padding-left: 10px; padding-top: 10px; }
 }

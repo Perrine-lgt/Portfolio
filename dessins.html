@@ -1,205 +1,207 @@
 <!DOCTYPE HTML>
 <html lang="fr">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dessins — Perrine Goget</title>
         <link href="css/basic.css" rel="stylesheet" type="text/css">
         <link href="css/modal.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-    <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-    <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="conteneur_page">
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
-    <h1> 
-        dessins
-    </h1>
+        <!-- ===== COURS DE DESSIN ===== -->
+        <h1>Dessins</h1>
+        <h2>Cours de dessins</h2>
 
-<h2> 
-       Cours de dessins
-    </h2>
+        <div class="text-block">
+            <p>J'ai pris des cours de dessins au sein de l'association ADAMM avec Martyne Maillard.<br>
+            Elle est une artiste contemporaine diplômée des Beaux-Arts.<br>
+            Elle partage son temps entre l'enseignement artistique et la création de ses œuvres.</p>
+        </div>
 
-<p>
-J'ai pris des cours de dessins au sein de l'association ADAMM avec Martyne Maillard. <br>
-Elle est une artiste contemporaine diplômée des Beaux-Arts. <br>
-Elle partage son temps entre l'enseignement artistique et la création de ses oeuvres.
-</p>
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/fleur.jpeg" alt="Fleur violette">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/oiseau.jpeg" alt="Des oiseaux en aquarelle">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/fleur_rose.jpeg" alt="Entraînement fleur rose">
+            </div>
+        </div>
 
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/fleur.jpeg" alt="fleur violette">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/oiseau.jpeg" alt="Des oiseaux en aquarelle">
-    </div>
-        <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/fleur_rose.jpeg" alt="Entrainement fleur rose">
-    </div>
-</div>
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_7.jpg" alt="Fille au crayon à papier">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_6.jpg" alt="Test yeux et nez au crayon à papier">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_10.jpg" alt="Récipient à la sanguine">
+            </div>
+        </div>
 
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_9.jpg" alt="Le jouet à la sanguine">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--medium" src="image/dessins/dessin_5.jpg" alt="Statue à la sanguine">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_4.jpg" alt="Poisson au fusain">
+            </div>
+        </div>
 
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_7.jpg" alt="fille crayon a papier">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_6.jpg" alt="test yeux et nez au crayon à papier">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_10.jpg" alt="Récipient à la sanguine">
-    </div>
-</div>
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_3.jpg" alt="Lapin au crayon à papier">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_8.jpg" alt="Mouette au crayon à papier">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--medium" src="image/dessins/dessin_2.jpg" alt="Buste au crayon à papier (fini)">
+            </div>
+        </div>
 
+        <!-- ===== DESSINS D'IMAGINATION ===== -->
+        <h2>Mes dessins d'imagination</h2>
 
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/ena_black.jpeg" alt="Ena sur papier noir">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/maomao_v3.jpeg" alt="Mao mao en aquarelle">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/letterrine_black.jpeg" alt="Letterrine sur papier noir">
+            </div>
+        </div>
 
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_9.jpg" alt=" Le jouet à la sanguine">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_5.jpg" alt="Statue à la sanguine" class="navis">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_4.jpg" alt="Poisson au fusain">
-    </div>
-</div>
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/train_breton.jpeg" alt="Début de dessin">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dessin_vert.jpeg" alt="Dessin vert">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/caine.png" alt="Caine dans TADC">
+            </div>
+        </div>
 
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dess_im_mer.jpg" alt="Mer de Bretagne à l'aquarelle">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dess_im_village.jpg" alt="Village de Bretagne">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dess_im_lac.jpg" alt="Rivière de Bretagne">
+            </div>
+        </div>
 
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--medium" src="image/dessins/dess_im_maomao.jpg" alt="Dessin de Mao mao au fusain">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/dessins/dess_im_maomao_aqua.jpg" alt="Dessin de Mao mao à l'aquarelle">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--medium" src="image/dessins/dess_im_hermione.jpg" alt="Hermione Granger au crayon à papier">
+            </div>
+        </div>
 
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_3.jpg" alt="Lapin au crayon à papier">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_8.jpg" alt="mouette au crayon à papier">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_2.jpg" alt="buste au crayon à papier (finit)" class="navis">
-    </div>
-</div>
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_klee.jpg" alt="Dessin de Klee à l'aquarelle">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_jane.jpg" alt="Dessin de Jane à l'aquarelle">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_clo.jpg" alt="Dessin de Clo à l'aquarelle">
+            </div>
+        </div>
 
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_arbre.jpg" alt="Dessin d'un arbre">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_mimikyu.jpg" alt="Dessin de Mimikyu">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_vanessa.jpg" alt="Dessin de Vanessa">
+            </div>
+        </div>
 
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_conductor.jpg" alt="Dessin de Conductor">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--medium" src="image/dessins/dess_im_cro_A.jpg" alt="Croquis de la letterrine A">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/dessins/dess_im_A.jpg" alt="Letterrine A à l'aquarelle">
+            </div>
+        </div>
 
+        <!-- Modal -->
+        <div class="modal" onclick="closeModal()">
+            <img class="modal-image" src="" alt="Image agrandie">
+        </div>
 
+    </main>
 
-    <h2> 
-        Mes dessins d'imagination
-    </h2>
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
 
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="src/javascript/open_modal.js"></script>
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
 
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/ena_black.jpeg" alt="Ena mais sur papier noir">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/maomao_v3.jpeg" alt="Mao mao en aquarelle">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/letterrine_black.jpeg" alt="Letterrine sur papier noir">
-    </div>
-</div>
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/train_breton.jpeg" alt="début de dessin">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dessin_vert.jpeg" alt="dessin vert ">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/caine.png" alt="Caine dans tadc">
-    </div>
-</div>
-
-
-<div class="grille">
-	<div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_mer.jpg" alt="Mer de bretagne à l'aquarelle.">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_village.jpg" alt="village de bretagne">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_lac.jpg" alt="Rivière de bretagne.">
-    </div>
-</div>
-
-
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_maomao.jpg" alt="dessin de mao mao au fusain" class="navis">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_maomao_aqua.jpg" alt="dessin de mao mao a l'aquarelle.">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_hermione.jpg" alt="Hermione Granger au crayon à papier." class="navis">
-    </div>
-</div>
-
-
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_klee.jpg" alt="dessin de klee à l'aquarelle." class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_jane.jpg" alt="dessin de Jane à l'aquarelle." class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_clo.jpg" alt="dessin de Clo à l'aquarelle." class="portrait">
-    </div>
-</div>
-
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_arbre.jpg" alt="dessin d'un arbre." class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_mimikyu.jpg" alt="dessin de Mimikyu." class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_vanessa.jpg" alt="dessin de Vanessa." class="portrait">
-    </div>
-    
-</div>
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_conductor.jpg" alt="dessin de Conductor." class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_cro_A.jpg" alt="Croquis de la letterrine A'" class="navis">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/dessins/dess_im_A.jpg" alt="Letterrine A à l'aquarelle." class="portrait">
-    </div>
-</div>
-
-
-
-
-<div class="modal"  onclick="closeModal()">
-    <img class="modal-image" src="">
-</div>
-<script src="javascript/open_modal.js"></script>
-
-
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
-</div>
-  </body>
-</html> 
+</body>
+</html>

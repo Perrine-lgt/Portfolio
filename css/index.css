@@ -5,422 +5,797 @@
 /*                             I La base de mes pages                              */
 /***********************************************************************************/
 
+/* Pour tout les élément je retire les marges et le padding */
+* {
+    margin: 0;
+    padding: 0;
+}
 
-/* Le bas de la page  */
+:root {
+    /* --- Couleurs --- */
+    --color-primary: rgb(251 248 255);
+    --color-dark-blue: rgb(11 12 74);
+    --color-text-navbar: white;
+    --color-light-blue: rgba(238, 250, 252, 0.6);
+    --color-border-button: rgba(37, 99, 235, 0.12);
+    --color-font-base: rgb(48, 11, 97);
+    --color-purple-dark: #281B35;
+    --color-purple-text: #7d47cf;
+    --color-white: #ffffff;
+    --color-card-border: rgba(15, 23, 42, 0.06);
 
+    /* --- Dégradé principal (bleu) --- */
+    --gradient-blue: 90deg, #1e3c72 10%, #2a5298 60%, #6dd5fa 100%;
 
-*{
-    margin: 0%;
-    padding: 0%;
-}/*Pour tout les élément je retire les marges et le padding*/
+    /* --- Typographie --- */
+    --font-basics: 'Montserrat', Arial, sans-serif;
+
+    /* --- Rayons de bordure --- */
+    --radius-lg: 28px;
+    --radius-md: 22px;
+    --radius-sm: 14px;
+
+    /* --- Ombres --- */
+    --shadow-card-blue: 0 8px 36px rgba(125, 71, 207, 0.18), 0 2px 10px rgba(125, 71, 207, 0.09);
+    --shadow-card-neutral: 0 8px 30px rgba(2, 6, 23, 0.04);
+    --shadow-image-ring: 0 0 0 8px rgb(40 27 53 / 52%);
+
+    /* --- Transitions --- */
+    --transition-transform: transform 0.3s ease-in-out;
+    --transition-burger: transform 0.3s, opacity 0.3s;
+
+    /* --- Z-index --- */
+    --z-navbar: 10000;
+}
 
 body {
-    background-color: rgb(251 248 255);
+    background-color: var(--color-primary);
+}
 
 
-}/*Pour le corps je mes la couleurs de font*/
+/* ===========================
+NAVBAR — base mobile first
+   =========================== */
 
-
-
-
-/*************************************************************/
-/* II La barre de Navigation du Haut (le bandeau de la page) */
-/*************************************************************/
-
-
-header {
-    background-color: rgb(11 12 74) ;
+.navbar__ {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(var(--gradient-blue));
     display: flex;
-}/* Dans le header je met une couleur de fond et mon display flex (pour m'assurer que les éléments fils directs seront alignés sur une ligne) */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px;
+    padding-bottom: 22px;
+    z-index: var(--z-navbar);
+}
 
+/* Les 3 liens */
+.navbar__menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: linear-gradient(var(--gradient-blue));
+    padding: 12px 0;
+}
 
+.navbar__menu.is-open {
+    display: flex;
+    width: 100vw;
+    top: 8%;
+    padding-left: 2rem;
+    z-index: var(--z-navbar);
+}
 
-
-nav {
-    width:100%;
-    height:15rem;
-    display:flex;
-    justify-content:center;
-} /* Dans la balise nav: je met l'image de ma bannière que je fait répéter sur l'axe x.  */
-/* L'image fera partie du background et je lui donne une taille et je la positionne à 20 pixels sur l'axe y  */
-/* Je dimentionne le tout  */
-
-.navig{
-    background-color: rgba(238,250,252,0.6);
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 25px;
-    height:3rem;
-    display: inline;
-    scroll-padding-bottom: 0px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 1.7rem;
-    color: white;
+.navbar__link {
+    font-size: 0.96rem;
+    font-family: var(--font-basics);
     font-weight: bold;
-}/* Dans les balises de class navig ()   */
-  
+    color: var(--color-text-navbar);
+    text-decoration: none;
+    padding: 12px 20px;
+    width: 50%;
+}
+
+/* Le bouton hamburger */
+.navbar__burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbar__burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: var(--transition-burger);
+}
+
+/* Croix quand ouvert */
+.navbar__burger.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.navbar__burger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+.navbar__burger.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ===========================
+Tablette — 768px à 1023px
+   =========================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar__ {
+        justify-content: center;
+        padding: 14px 0;
+        gap: 12px;
+    }
+
+    .navbar__burger {
+        display: none;
+    }
+
+    .navbar__menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+        gap: 12px;
+    }
+
+    .navbar__link {
+        font-size: 1rem;
+        padding: 10px 12px;
+        width: auto;
+    }
+}
+
+
+/* ===========================
+Desktop — 1024px et plus
+   =========================== */
+
+@media (min-width: 1024px) {
+    .navbar__ {
+        justify-content: center;
+        padding: 18px 0;
+        gap: 16px;
+    }
+
+    .navbar__burger {
+        display: none;
+    }
+
+    .navbar__menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+        gap: 16px;
+    }
+
+    .navbar__link {
+        font-size: 1.2rem;
+        padding: 12px 16px;
+        width: auto;
+    }
+}
+
+
+/* ===========================
+Les liens en surbrillance au hover
+   =========================== */
 
 .url {
-    
     text-decoration: none;
     background: conic-gradient(#a8a8fef7 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, .08em);
-    transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s));
+    transition: .3s var(--t, 0s), background-position .3s calc(.3s - var(--t, 0s));
 }
 
-
-.url:hover
-{
+.url:hover {
     --p: 100%;
     --t: .3s;
-    color : rgb(40, 27, 53);
-} 
-
-.conteneur_page {
-    padding-top: 50px;
+    color: rgb(40, 27, 53);
 }
 
 
-.banner-construction {
-  width: 100vw;
-  left: 0;
-  top: 0;
-  position: fixed;
-  background: linear-gradient(90deg, #1e3c72 10%, #2a5298 60%, #6dd5fa 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1em;
-  font-weight: 500;
-  padding: 14px 0;
-  box-shadow: 0 2px 16px #1564ad33;
-  z-index: 10000;
-  gap: 16px;
-  animation: fadeInDown 1.2s cubic-bezier(.5, 1.7, .9, .9);
-  letter-spacing: 1px;
-  backdrop-filter: blur(2px);
-}
+/* ===========================
+Animation apparition du header
+   =========================== */
 
+.header {
+    animation: fadeInDown 1.2s cubic-bezier(.5, 1.7, .9, .9);
+    letter-spacing: 1px;
+}
 
 @keyframes fadeInDown {
-  from {
-    transform: translateY(-40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
+
 @keyframes rotateTool {
-  0%   { transform: rotate(-20deg);}
-  80%  { transform: rotate(25deg);}
-  100% { transform: rotate(-20deg);}
+    0%   { transform: rotate(-20deg); }
+    80%  { transform: rotate(25deg); }
+    100% { transform: rotate(-20deg); }
 }
+
 @keyframes textGlow {
-  0% { text-shadow: 0 2px 8px #6dd5fa66;}
-  100% { text-shadow: 0 2px 22px #6dd5fa;}
+    0%   { text-shadow: 0 2px 8px #6dd5fa66; }
+    100% { text-shadow: 0 2px 22px #6dd5fa; }
 }
-@media (max-width: 600px) {
-  .banner-construction {
-    font-size: 0.96em;
-    padding: 10px 0;
+
+
+/**********************************************************************************/
+/*                       VI Page des nouveaux projets                             */
+/**********************************************************************************/
+
+/* ===========================
+Grille des cartes — mobile first
+   =========================== */
+
+.main__section-art__ {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    padding-top: 20vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: grid;
+    gap: 18px;
+}
+
+.main__section-art__card__ {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--shadow-card-neutral);
+    border-radius: var(--radius-lg);
+}
+
+.main__section-art__card-left,
+.main__section-art__card-right {
+    grid-template-areas:
+        "img"
+        "content";
+}
+
+.main__section-art__card__img {
+    grid-area: img;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.main__section-art__card__content {
+    grid-area: content;
+    padding: 2rem !important;
+    padding-top: 4rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* titre en haut */
+    gap: 12px;
+    min-width: 0;
+    position: relative;
+}
+
+.main__section-art__card__actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    flex-direction: row;
     gap: 10px;
-  }
+}
+
+.main__section-art__card__btn {
+    background: transparent;
+    color: var(--color-font-base);
+    border: 1px solid var(--color-border-button);
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100px;
+    font-family: var(--font-basics);
+    text-align: center;
+}
+
+.main__section-art__card__content_h2 {
+    padding-bottom: 3vh;
+    color: var(--color-font-base);
+    font-family: var(--font-basics);
+}
+
+.main__section-art__card__content_p {
+    font-family: var(--font-basics);
+}
+
+.main__section-art__card__divimg {
+    grid-area: img;
+    max-height: none;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    position: relative;
+    object-position: center;
+    overflow: hidden;
 }
 
 
-/**********************************************************************************/
-/* III La Div avec la photo et le texte qui suis-je sur la page de perrine goget. */
-/**********************************************************************************/
+/****************************************************************************************/
+/* III La Div avec la photo et le texte "qui suis-je" sur la page — mobile               */
+/****************************************************************************************/
 
 .le_corps {
-
-      min-height: 70vh;
-       margin: 0;
-       padding-top: 2vh;
-       padding-bottom: 5vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding : 8vw;
-   
+    min-height: 70vh;
+    margin: 0;
+    padding: 8vw;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-    .carte-presentation {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      background: linear-gradient(90deg, #1e3c72 10%, #2a5298 60%, #6dd5fa 100%);
-      border-radius: 28px;
-      box-shadow: 0 8px 36px rgba(125, 71, 207, 0.18), 0 2px 10px rgba(125, 71, 207, 0.09);
-      padding: 38px 52px;
-      max-width: 110rem;
-      border: 3px solid #281B35;
-      position: relative;
-      overflow: hidden;
-      gap: 38px;
-      width:110rem;
-    }
+.carte-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 98vw;
+    background: linear-gradient(var(--gradient-blue));
+    border: 3px solid var(--color-purple-dark);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card-blue);
+    padding: 16px 4px;
+    position: relative;
+    overflow: hidden;
+    gap: 24px;
+}
 
-
-    .carte-image {
-      flex-shrink: 0;
-      width: 17rem;
-      max-width: 70vw;
-      aspect-ratio: 2/3;
-      border-radius: 22px;
-      border: 4px solid #281B35;
-      object-fit: cover;
-      box-shadow: 0 0 0 8px rgb(40 27 53 / 52%);
-      background: #eee;
-      display: block;
-       max-width: 70%;
+.carte-image {
+    flex-shrink: 0;
+    width: 45vw;
+    max-width: 100%;
     height: auto;
+    aspect-ratio: 2/3;
+    border-radius: var(--radius-md);
+    border: 4px solid var(--color-purple-dark);
+    object-fit: cover;
+    box-shadow: var(--shadow-image-ring);
+    background: #eee;
+    display: block;
     shape-outside: border-box;
-    transition: transform 0.3s ease-in-out;
-    }
-    .carte-contenu {
-      flex: 1 1 0;
-      color: #7d47cf;
-      text-shadow: 0 2px 4px #ffffffde;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .carte-titre {
-      font-family: 'Monsterrat', Arial, sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: #ffffff;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .carte-description {
-    font-size: 25px;
-    color:white;
-    /*color: rgb(40, 27, 53);*/
-      line-height: 1.6;
-      /*background: rgba(255,255,255,0.80);*/
-      padding: 16px 26px;
-      border-radius: 14px;
-      /*box-shadow: 0 2px 12px #c471f522;*/
-      margin-top: 10px;
-      display: inline-block;
-      text-shadow: none;
-    }
-    .picto-sablier {
-      position: absolute;
-      opacity: 0.8;
-      z-index: 1;
-      pointer-events: none;
-      filter: drop-shadow(0 1px 10px #d0effa);
-    }
-    .picto1 { width: 78px; height: 78px; left: -34px; top: -34px; transform: rotate(-13deg);}
-    .picto2 { width: 70px; height: 70px; right: 16px; bottom: -16px; transform: rotate(16deg);}
-    .picto3 { width: 76px; height: 76px; left: 38%; bottom: -30px; transform: rotate(-8deg);}
-    .picto4 { width: 62px; height: 62px; right: 58px; top: -24px; transform: rotate(19deg);}
-    .picto5 { width: 64px; height: 64px; left: -28px; bottom: 40px; transform: rotate(-24deg);}
-    .picto6 { width: 80px; height: 80px; right: 200px; top: 35px; transform: rotate(341deg);}
-    @media (max-width: 600px) {
-      .carte-presentation {
-        flex-direction: column;
-        padding: 16px 4vw;
-        gap: 18px;
-        max-width: 98vw;
-      }
-      .carte-image { width: 90vw; max-width: 100%; }
-    }
+    transition: var(--transition-transform);
+}
+
+.carte-contenu {
+    flex: 1 1 0;
+    color: var(--color-purple-text);
+    text-shadow: 0 2px 4px #ffffffde;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carte-titre {
+    font-family: var(--font-basics);
+    color: var(--color-white);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.carte-description {
+    font-size: 14px;
+    color: var(--color-text-navbar);
+    line-height: 1.6;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    margin-top: 10px;
+    display: inline-block;
+    text-shadow: none;
+}
+
+.picto-sablier {
+    display: none;
+}
+
 #divshape {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 50px;
-    
+    margin-left: 0px;
 }
-
 
 #divshape :hover {
     transform: scale(1.1);
 }
 
-
-
 #link {
     max-width: 700px;
     top: 200px;
     left: 400px;
-    font-size: 25px;
-    /*color: rgb(40, 27, 53);*/
-    color: white;
-
+    font-size: 14px;
+    color: var(--color-text-navbar);
 }
 
 #link :hover {
     transform: scale(1.1);
 }
 
-
-
-
-
-/**********************************************************************************/
-/*                  IV Le texte de la page perrine goget                          */
-/**********************************************************************************/
-
 h1 {
-  font-family: 'Monsterrat', Arial, sans-serif;
-
-    margin-top: 100px;
+    font-family: var(--font-basics);
+    margin-top: 32px;
     text-align: center;
-    font-size: 70px;
-    color: rgb(48, 11, 97);
+    font-size: 40px;
+    color: var(--color-font-base);
 }
 
-
-/**********************************************************************************/
-/*                       VI Page des nouveau projets                              */
-/**********************************************************************************/
-
-
-    .corps {
-      margin: 0;
-      /*height: 50vh;*/
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      font-family: sans-serif;
-      perspective: 1200px;
-      padding-top: 20vh;
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
-
-    .section-new-elt {
-          display: grid;
-          gap : 18px
-    }
-
-.card {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
-    align-items: stretch;
-    overflow: hidden;
-    border: 1px solid rgba(15, 23, 42, 0.06);
-    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.04);
-    border-radius: 28px;
-}
-
-.card--img-left {
-    grid-template-areas: "img content";
-}
-
-.card--img-right{ grid-template-areas: "content img"; }
-
-.card-img{
-  grid-area: img;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.card-body{
-  padding: 2rem !important;
-  padding-top: 4rem !important;
-  grid-area: content;
-  padding:var(--card-padding);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start; /* titre en haut */
-  gap:12px;
-  min-width:0;
-  position:relative;
-}
-
-.card-actions {
-    margin-top: 110px;
-    display: flex
-;
-    justify-content: flex-end;
-    gap: 10px;
-    align-content: flex-end;
-    flex-direction: row;
-}
-.card-btn {
-    background: transparent;
-    color: var(--accent);
-    border: 1px solid rgba(37, 99, 235, 0.12);
-    padding: 10px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 700;
-    width: 100px;
-          color: rgb(48, 11, 97);
-    font-family: "Montserrat", Arial, sans-serif;
-    text-align: center;
-
-}
-
-.card-title {
-  padding-bottom: 3vh;
-      color: rgb(48, 11, 97);
-    font-family: "Montserrat", Arial, sans-serif;
-
-}
-
-.card-desc{
-  font-family: "Montserrat", Arial, sans-serif;
-}
-
-.divimage {
-  max-width: max-content;
-  min-width:  20vw;
-  max-height: 30vw;
-      display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 12px;
-    min-width: 0;
-    position: relative;
-        object-position: center;
-
-}
-/**********************************************************************************/
-/*                                   VII Le footer                                */
-/**********************************************************************************/
-
-#footer_projet{
- background-color: rgb(11 12 74);
-    padding-left: 10px;
-    padding-top: 10px;
+#footer_projet {
+    background-color: var(--color-dark-blue);
+    padding-left: 8px;
+    padding-top: 8px;
     display: flex;
     align-items: center;
     align-content: center;
-    font-family: 'Montserrat',  Arial, sans-serif;
-    font-size: 1.5em;
-    color: white;
+    font-family: var(--font-basics);
+    font-size: 1em;
+    color: var(--color-text-navbar);
     font-weight: bold;
 }
 
 
+/* ===========================
+   Cartes projets + carte présentation — tablette
+   =========================== */
 
-#linki {
-width: 50px;
-min-width: 3%;
-background-color: white;
-border-radius: 10px;
-margin-left: 1rem
+@media (min-width: 768px) and (max-width: 1023px) {
+    .main__section-art__card__ {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main__section-art__card-left  { grid-template-areas: "img content"; }
+    .main__section-art__card-right { grid-template-areas: "content img"; }
+
+    .main__section-art__card__img {
+        height: 100%;
+    }
+
+    /**************************************************************************************/
+    /* III La Div avec la photo et le texte "qui suis-je" sur la page — tablette           */
+    /**************************************************************************************/
+
+    .le_corps {
+        min-height: 70vh;
+        margin: 0;
+        padding: 6vw;
+        padding-top: 2vh;
+        padding-bottom: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carte-presentation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        background: linear-gradient(var(--gradient-blue));
+        border: 3px solid var(--color-purple-dark);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card-blue);
+        padding: 28px 32px;
+        position: relative;
+        overflow: hidden;
+        gap: 24px;
+    }
+
+    .carte-image {
+        flex-shrink: 0;
+        width: 12rem;
+        max-width: 70%;
+        height: auto;
+        aspect-ratio: 2/3;
+        border-radius: var(--radius-md);
+        border: 4px solid var(--color-purple-dark);
+        object-fit: cover;
+        box-shadow: var(--shadow-image-ring);
+        background: #eee;
+        display: block;
+        shape-outside: border-box;
+        transition: var(--transition-transform);
+    }
+
+    .carte-titre {
+        font-family: var(--font-basics);
+        color: var(--color-white);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+
+    .carte-description {
+        font-size: 18px;
+        color: var(--color-text-navbar);
+        line-height: 1.6;
+        padding: 12px 18px;
+        border-radius: var(--radius-sm);
+        margin-top: 10px;
+        display: inline-block;
+        text-shadow: none;
+    }
+
+    .picto-sablier {
+        display: none;
+    }
+
+    #divshape {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+    }
+
+    #divshape :hover {
+        transform: scale(1.1);
+    }
+
+    #link {
+        max-width: 700px;
+        top: 200px;
+        left: 400px;
+        font-size: 18px;
+        color: var(--color-text-navbar);
+    }
+
+    #link :hover {
+        transform: scale(1.1);
+    }
+
+    h1 {
+        font-family: var(--font-basics);
+        margin-top: 70px;
+        text-align: center;
+        font-size: 50px;
+        color: var(--color-font-base);
+    }
+
+    #footer_projet {
+        background-color: var(--color-dark-blue);
+        padding-left: 10px;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        font-family: var(--font-basics);
+        font-size: 1.5em;
+        color: var(--color-text-navbar);
+        font-weight: bold;
+    }
 }
 
 
+/* ===========================
+   Cartes projets + carte présentation — desktop
+   =========================== */
+
+@media (min-width: 1024px) {
+    .main__section-art__card__ {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main__section-art__card-left  { grid-template-areas: "img content"; }
+    .main__section-art__card-right { grid-template-areas: "content img"; }
+
+    .main__section-art__card__img {
+        height: 100%;
+    }
+
+    /**********************************************************************************/
+    /* III La Div avec la photo et le texte "qui suis-je" sur la page — desktop        */
+    /**********************************************************************************/
+
+    .le_corps {
+        min-height: 70vh;
+        margin: 0;
+        padding: 8vw;
+        padding-top: 2vh;
+        padding-bottom: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carte-presentation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 110rem;
+        max-width: 110rem;
+        background: linear-gradient(var(--gradient-blue));
+        border: 3px solid var(--color-purple-dark);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card-blue);
+        padding: 38px 52px;
+        position: relative;
+        overflow: hidden;
+        gap: 38px;
+    }
+
+    .carte-image {
+        flex-shrink: 0;
+        width: 17rem;
+        max-width: 70%;
+        height: auto;
+        aspect-ratio: 2/3;
+        border-radius: var(--radius-md);
+        border: 4px solid var(--color-purple-dark);
+        object-fit: cover;
+        box-shadow: var(--shadow-image-ring);
+        background: #eee;
+        display: block;
+        shape-outside: border-box;
+        transition: var(--transition-transform);
+    }
+
+    .carte-titre {
+        font-family: var(--font-basics);
+        color: var(--color-white);
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+
+    .carte-description {
+        font-size: 25px;
+        color: var(--color-text-navbar);
+        line-height: 1.6;
+        padding: 16px 26px;
+        border-radius: var(--radius-sm);
+        margin-top: 10px;
+        display: inline-block;
+        text-shadow: none;
+    }
+
+    .picto-sablier {
+        position: absolute;
+        opacity: 0.8;
+        z-index: 1;
+        pointer-events: none;
+        filter: drop-shadow(0 1px 10px #d0effa);
+    }
+    .picto1 { width: 78px; height: 78px; left: -34px;  top: -34px;   transform: rotate(-13deg); }
+    .picto2 { width: 70px; height: 70px; right: 16px;  bottom: -16px; transform: rotate(16deg); }
+    .picto3 { width: 76px; height: 76px; left: 38%;    bottom: -30px; transform: rotate(-8deg); }
+    .picto4 { width: 62px; height: 62px; right: 58px;  top: -24px;   transform: rotate(19deg); }
+    .picto5 { width: 64px; height: 64px; left: -28px;  bottom: 40px;  transform: rotate(-24deg); }
+    .picto6 { width: 80px; height: 80px; right: 200px; top: 35px;    transform: rotate(341deg); }
+
+    #divshape {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+    }
+
+    #divshape :hover {
+        transform: scale(1.1);
+    }
+
+    #link {
+        max-width: 700px;
+        top: 200px;
+        left: 400px;
+        font-size: 25px;
+        color: var(--color-text-navbar);
+    }
+
+    #link :hover {
+        transform: scale(1.1);
+    }
+
+    h1 {
+        font-family: var(--font-basics);
+        margin-top: 100px;
+        text-align: center;
+        font-size: 70px;
+        color: var(--color-font-base);
+    }
+
+    #footer_projet {
+        background-color: var(--color-dark-blue);
+        padding-left: 10px;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        font-family: var(--font-basics);
+        font-size: 1.5em;
+        color: var(--color-text-navbar);
+        font-weight: bold;
+    }
+}
 
 
+/*************************************************************/
+/* II La barre de Navigation du Haut (le bandeau de la page) */
+/*************************************************************/
 
+.conteneur_page {
+    padding-top: 50px;
+}
+
+
+/**********************************************************************************/
+/* III Ajustement fin — petits écrans (< 600px)                                   */
+/**********************************************************************************/
+
+@media (max-width: 600px) {
+    .carte-presentation {
+        flex-direction: column;
+        padding: 16px 4vw;
+        gap: 18px;
+        max-width: 98vw;
+    }
+    .carte-image {
+        width: 35vw;
+        max-width: 100%;
+    }
+}
+
+
+/**********************************************************************************/
+/*                                   VII Le footer                                */
+/**********************************************************************************/
+
+#linki {
+    width: 50px;
+    min-width: 3%;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 1rem;
+}

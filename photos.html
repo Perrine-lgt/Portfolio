@@ -1,95 +1,112 @@
 <!DOCTYPE HTML>
 <html lang="fr">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/basic.css" rel="stylesheet" type="text/css">
         <link href="css/modal.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>Prise de photos — Perrine Goget</title>
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-    <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-    <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="conteneur_page">
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
-    <h1> 
-        Mes Photos
-    </h1>
-<p>
-Quelques photos, sans oublier les photos prises sur le vif comme le grand bicycle<br> vu du bus ou encore le cheval avec sa frite !
-</p>
-
-
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_2.jpg" alt="rivière de bretagne" >
-    </div>
-
-        <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_10.jpg" alt="Poudlard">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_6.jpg" alt="Picotie et Miléna (mes 2 poules)">
-    </div>
-
-</div>
+        <h1>Mes Photos</h1>
+        <h2>Quelques photos, sans oublier les photos prises sur le vif comme le grand bicycle<br> vu du bus ou encore le cheval avec sa frite !
+        </h2>
 
 
-<div class="grille">
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_2.jpg" alt="rivière de bretagne" >
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_10.jpg" alt="Poudlard">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_6.jpg" alt="Picotie et Miléna (mes 2 poules)">
+            </div>
+        </div>
 
-    <div class="image-container" onclick="openModal(this)">
-        <img class="portrait_ph" src="image/photos/photo_biche.jpg" alt="Photo d'une biche" >
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img class="portrait_ph" src="image/photos/photo_7.jpg" alt="batiment à londre avec du soleil">
-    </div>
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="portrait_ph" src="image/photos/photo_biche.jpg" alt="Photo d'une biche" >
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="portrait_ph" src="image/photos/photo_7.jpg" alt="batiment à londre avec du soleil">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="portrait_ph" src="image/photos/photo_8.jpg" alt="Vélo 2 roue" >
+            </div>
+        </div>
 
-    <div class="image-container" onclick="openModal(this)">
-        <img class="portrait_ph" src="image/photos/photo_8.jpg" alt="Vélo 2 roue" >
-    </div>
-</div>
-
-
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_9.jpg" alt="Big ben" class="portrait_ph">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_5.jpg" alt="point violet" class="portrait_ph">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_4.jpg" alt="fleur avec de la lumière" class="portrait_ph">
-    </div>    <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_3.jpg" alt="bout de rivière de bretagne" class="portrait_ph">
-    </div>
-        <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_1.jpg" alt="transparence de l'eau de bretagne" class="portrait_ph">
-    </div>
-        <div class="image-container" onclick="openModal(this)">
-        <img src="image/photos/photo_11.jpg" alt="Voleur (Un cheval qui tiens une frite) " class="portrait_ph">
-    </div>
-</div>
-
-
-<div class="modal"  onclick="closeModal()">
-    <img class="modal-image" src="">
-</div>
-<script src="javascript/open_modal.js"></script>
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_9.jpg" alt="Big ben" class="portrait_ph">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_5.jpg" alt="point violet" class="portrait_ph">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_4.jpg" alt="fleur avec de la lumière" class="portrait_ph">
+            </div>  
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_3.jpg" alt="bout de rivière de bretagne" class="portrait_ph">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_1.jpg" alt="transparence de l'eau de bretagne" class="portrait_ph">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/photos/photo_11.jpg" alt="Voleur (Un cheval qui tiens une frite) " class="portrait_ph">
+            </div>
+        </div>
 
 
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
-</div>
-  </body>
-</html> 
+        <!-- Modal -->
+        <div class="modal" onclick="closeModal()">
+            <img class="modal-image" src="" alt="Image agrandie">
+        </div>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="src/javascript/open_modal.js"></script>
+    <script src="src/javascript/livre_guide.js"></script>
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
+
+</body>
+</html>

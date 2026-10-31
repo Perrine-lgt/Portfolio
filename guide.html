@@ -1,71 +1,93 @@
-
+<!DOCTYPE HTML>
 <html lang="fr">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link href="css/guide.css" rel="stylesheet" type="text/css">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/basic.css" rel="stylesheet" type="text/css">
+        <link href="css/modal.css" rel="stylesheet" type="text/css">
         <link href="css/livre.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>Le petit guide du Fablab — Perrine Goget</title>
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-    <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-    <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<main class="conteneur_page">
-     <h1> 
-        Le petit guide du Fablab
-    </h1>
-    <h2> 
-Un guide sur le Fablab des Gobelins réalisé avec Illustrator.
-    </h2>
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
-<div class="grille">
-        <div class="image-container" onclick="openModal(this)">
-        <img src="image/guide/mockup_book_open.webp" alt="Le guide" >
-    </div>
-       <div class="image-container" onclick="openModal(this)">
-        <img src="image/guide/book-mockup.webp" alt="Le guide ouvert">
-    </div>
+        <h1>Le petit guide du Fablab</h1>
+        <h2>Un guide sur le Fablab des Gobelins réalisé avec Illustrator.</h2>
 
+        <!-- Mockups -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/guide/mockup_book_open.webp" alt="Le guide fermé">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/guide/book-mockup.webp" alt="Le guide ouvert">
+            </div>
+        </div>
 
-</div>
+        <!-- Texte -->
+        <div class="text-block">
+            <p>Ce livret est un projet de l'école où j'ai choisi de le créer entièrement sous Illustrator.</p>
+        </div>
 
+        <!-- Composant livre -->
+        <div class="conteuneur_livre">
+            <div class="book-container">
+                <div class="book" id="book">
+                    <div class="page-stack" id="staticPages"></div>
+                </div>
+                <div class="book-buttons">
+                    <button id="prev-btn">⟸ Précédent</button>
+                    <button id="next-btn">Suivant ⟹</button>
+                </div>
+            </div>
+        </div>
 
-<div class="modal"  onclick="closeModal()">
-    <img class="modal-image" src="">
-</div>
+        <!-- Modal -->
+        <div class="modal" onclick="closeModal()">
+            <img class="modal-image" src="" alt="Image agrandie">
+        </div>
 
-<div class="mon_texte">
-    <p>Ce livret est un projet de l'école où j'ai choisi de le créer entièrement sous Illustrator.
-    </p>
-</div>
+    </main>
 
-<div class="conteuneur_livre">
-  <div class="book-container">
-    <div class="book" id="book">
-      <div class="page-stack" id="staticPages"></div>
-      <!-- La page qui tourne sera rajoutée dynamiquement -->
-    </div>
-    <button id="prev-btn">⟸ Précédent</button>
-    <button id="next-btn">Suivant ⟹</button>
-  </div>
-  </div>
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
 
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="src/javascript/open_modal.js"></script>
+    <script src="src/javascript/livre_guide.js"></script>
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
 
-
-<script src="javascript/open_modal.js"></script>
-<script src="javascript/livre_guide.js"></script>
-</main>
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
-
-  </body>
+</body>
 </html>

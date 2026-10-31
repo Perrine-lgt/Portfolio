@@ -2,6 +2,9 @@
 <html lang="fr">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Page d'accueil — Perrine Goget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/index.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -9,67 +12,76 @@
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-                 <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-                  <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+<header class="header">
+  <nav class="navbar__">
+    <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="navbar__menu" id="navMenu">
+      <a href="index.html" class="navbar__link url"><i class="fa-solid fa-house"></i> Accueil</a>
+      <a href="pro.html" class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+      <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i> Projets Perso</a>
+    </div>
+  </nav></header>
 
 
- <div class="corps">
+<main class="main__">
 
-   <section class="section-new-elt" aria-live="polite">
+<div class="corps">
+
+  <section class="main__section-art__" aria-live="polite">
       <!-- Bloc 1 : image à gauche, contenu à droite -->
-      <article class="card card--img-left" data-id="1" role="article">
-        <div class="divimage"> 
-          <img class="card-img"
-             src='image/pro/newsletter-1.png'
-             alt="Image bloc 1">
+      <article class="main__section-art__card__ main__section-art__card-left" data-id="1" role="article">
+        <div class="main__section-art__card__divimg"> 
+          <img class="main__section-art__card__img" src="image/pro/newsletter-1.png" alt="Image bloc 1">
         </div>
-        <div class="card-body">
-          <div class="card-text">
-            <h2 class="card-title">Newsletter pour présenter les formations.</h2>
-            <p class="card-desc">En tant qu'agent de la Banque de France au cabinet de la DGSI, <br> j'ai pu réaliser une newsletter pour les agents de la banque de france. </p>
+        <div class="main__section-art__card__content">
+          <div class="main__section-art__card__content_text">
+            <h2 class="main__section-art__card__content_h2">Newsletter pour présenter les formations.</h2>
+            <p class="main__section-art__card__content_p">En tant qu'agent de la Banque de France au cabinet de la DGSI,
+j'ai pu réaliser une newsletter pour les agents de la banque de france.</p>
           </div>
-          <div class="card-actions">
-           <a class="card-btn" href="newsletter-pour-la-banque-de-france.html">Voir</a>
+          <div class="main__section-art__card__actions">
+           <a class="main__section-art__card__btn" href="newsletter-pour-la-banque-de-france.html">Voir</a>
           </div>
         </div>
       </article>
 
       <!-- Bloc 2 : image à droite (validé) -->
-      <article class="card card--img-right" data-id="2" role="article">
-             <div class="divimage"> 
-         <img class="card-img"
-             src='image/animation-tadc/animation-1.png'
-             alt="Image bloc 1">
+      <article class="main__section-art__card__ main__section-art__card-right" data-id="2" role="article">
+             <div class="main__section-art__card__divimg"> 
+         <img class="main__section-art__card__img"
+             src="image/animation-tadc/animation-1.png"
+             alt="Image bloc 2">
         </div>
   
-        <div class="card-body">
-          <div class="card-text">
-            <h2 class="card-title">Ifest version TADC</h2>
-            <p class="card-desc">Dans le cadre d'un cours d'After Effect j'ai pu réaliser ma toute première animation en 2D.</p>
+        <div class="main__section-art__card__content">
+          <div class="main__section-art__card__content_text">
+            <h2 class="main__section-art__card__content_h2">Ifest version TADC</h2>
+            <p class="main__section-art__card__content_p">Dans le cadre d'un cours d'After Effect j'ai pu réaliser ma toute première animation en 2D.</p>
           </div>
-          <div class="card-actions">
-            <a class="card-btn" href="animation-ifest-version-tadc.html">Voir</a>
+          <div class="main__section-art__card__actions">
+            <a class="main__section-art__card__btn" href="animation-ifest-version-tadc.html">Voir</a>
           </div>
         </div>
       </article>
 
       <!-- Bloc 3 : image à gauche -->
-      <article class="card card--img-left" data-id="3" role="article">
-             <div class="divimage"> 
-           <img class="card-img"
+      <article class="main__section-art__card__ main__section-art__card-left" data-id="3" role="article">
+             <div class="main__section-art__card__divimg"> 
+           <img class="main__section-art__card__img"
              src='image/coque-tel/coque-7.png'
              alt="Image bloc 1">
              </div>
-        <div class="card-body">
-          <div class="card-text">
-            <h2 class="card-title">Une coque de téléphone !</h2>
-            <p class="card-desc">J'ai créer une illustration pour ma nouvelle coque de téléphone !</p>
+        <div class="main__section-art__card__content">
+          <div class="main__section-art__card__content_text">
+            <h2 class="main__section-art__card__content_h2">Une coque de téléphone !</h2>
+            <p class="main__section-art__card__content_p">J'ai créer une illustration pour ma nouvelle coque de téléphone !</p>
           </div>
-          <div class="card-actions">
-           <a class="card-btn" href="coque-telephone.html">Voir</a>
+          <div class="main__section-art__card__actions">
+           <a class="main__section-art__card__btn" href="coque-telephone.html">Voir</a>
           </div>
         </div>
       </article>
@@ -77,14 +89,6 @@
     </section>
 
 </div>
-
-
-
-
-
-
-
-
 
 
 <div class="conteneur_page">
@@ -160,7 +164,18 @@ naturellement orientée vers le cursus Créativité Numérique des Gobelins.</p>
 
 
 
-<script type="text/javascript" src="javascript/carroussel_acc.js"></script>
+
+
+</script>
+<script type="text/javascript" >
+    const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('navMenu');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('is-open');
+    navMenu.classList.toggle('is-open');
+  });
+</script>
 
 <footer id="footer_projet"> © Créé par Perrine Goget. 
     <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
@@ -168,5 +183,6 @@ naturellement orientée vers le cursus Créativité Numérique des Gobelins.</p>
     </a> 
 </footer>
 </div>
+</main>
   </body>
 </html> 

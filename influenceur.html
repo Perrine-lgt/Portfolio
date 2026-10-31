@@ -1,60 +1,87 @@
 <!DOCTYPE HTML>
 <html lang="fr">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<link href="css/basic.css" rel="stylesheet" type="text/css">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/basic.css" rel="stylesheet" type="text/css">
         <link href="css/modal.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>Les influenceurs — Perrine Goget</title>
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-    <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-    <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="conteneur_page">
-
-  
-    <h1> 
-      Les influenceurs
-    </h1>
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img class= "grande" src="image/influenceur/influenceur_site_1.png" alt="mockup du site">
-    </div>
-</div>
-
-<div class="mon_texte">
-    <p > 
-    À la fin de mon premier semestre, j'ai créé un site web en collaboration avec ma binome étudiante dans le DN-Made UI/UX de l'école les gobelins.<br> Nous devions créer un support qui traite d’un sujet touchant les jeunes entre 14 et 17 ans.<a href="https://hatterrine.github.io/influenceurs/index.html" id="link" class="url"> N'hésitez pas à y faire un tour !</a> </p>
-</div>
-
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img class= "carre" src="image/influenceur/influenceur_site_2.png" alt="Plusieurs proposition du logo">
-    </div>
-     <div class="image-container" onclick="openModal(this)">
-        <img class= "carre" src="image/influenceur/influenceur_site_3.png" alt="logo finale">
-    </div></div>
-
-<div class="modal"  onclick="closeModal()">
-    <img class="modal-image" src="">
-</div>
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
 
+    <h1> Les influenceurs</h1>
 
-<script src="javascript/open_modal.js"></script>
+        <!-- Image principale -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--large" src="image/influenceur/influenceur_site_1.png" alt="Illustration complète de la coque">
+            </div>
+        </div>
+        <!-- Texte intro -->
+        <div class="text-block">
+            <p> À la fin de mon premier semestre, j'ai créé un site web en collaboration avec ma binome étudiante dans le DN-Made UI/UX de l'école les gobelins.<br>
+                Nous devions créer un support qui traite d’un sujet touchant les jeunes entre 14 et 17 ans.<a href="https://hatterrine.github.io/influenceurs/index.html" class="url"> N'hésitez pas à y faire un tour !</a>
+            </p>
+        </div>
 
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
-</div>
-  </body>
-</html> 
+        <!-- Mockups -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class= "carre" src="image/influenceur/influenceur_site_2.png" alt="Plusieurs proposition du logo">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class= "carre" src="image/influenceur/influenceur_site_3.png" alt="logo finale">
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" onclick="closeModal()">
+            <img class="modal-image" src="" alt="Image agrandie">
+        </div>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="src/javascript/open_modal.js"></script>
+    <script src="src/javascript/livre_guide.js"></script>
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
+
+</body>
+</html>

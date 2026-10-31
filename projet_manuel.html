@@ -1,96 +1,113 @@
 <!DOCTYPE HTML>
 <html lang="fr">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">    
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/basic.css" rel="stylesheet" type="text/css">
         <link href="css/modal.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>Projets Manuels — Perrine Goget</title>
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-    <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-    <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="conteneur_page">
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
-    <h1> 
-       Mes Projets Manuels
-    </h1>
+        <h1>Mes Projets Manuels</h1>
 
+        <div class="text-block">
+            <p>Je me suis beaucoup amusée à peindre la baie vitrée pour Noël.<br>
+            Créative, j'aime customiser des objets et créer des badges :<br>
+            ce sont quelques-uns de mes passe-temps.</p>
+        </div>
 
-<div class="mon_texte"><p>
-Je me suis beaucoup amusée à peindre la baie vitrée pour Noël.<br>  
-Créative, j’aime customiser des objets et créer des badges : <br> 
-ce sont quelques-uns de mes passe-temps.
-</p>
-</div>
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_vitre1.jpg" alt="dessins des vitres sur papier">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_vitre3.jpg" alt="vitre droite" class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_vitre2.jpg" alt="vitre gauche" class="portrait">
-    </div>
-</div>
+        <!-- Vitres de Noël -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/manuels/pro_man_vitre1.jpg" alt="Dessins des vitres sur papier">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/manuels/pro_man_vitre3.jpg" alt="Vitre droite">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/manuels/pro_man_vitre2.jpg" alt="Vitre gauche">
+            </div>
+        </div>
 
-<div class="mon_texte"><p>
-Avec ma petite soeur, nous avons assemblé, décoré et créé une maison de poupée.
-</p>
-</div>
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_maison4.jpg" alt="maison vue 3/4" class="portrait">
-    </div>
+        <div class="text-block">
+            <p>Avec ma petite sœur, nous avons assemblé, décoré et créé une maison de poupée.</p>
+        </div>
 
-    <div class="image-container" onclick="openModal(this)">
-        
-        <img src="image/manuels/pro_man_maison2.jpg" alt="mauson vue de face" class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_maison3.jpg" alt="maison vue de coté" class="portrait">
-    </div>
-</div>
+        <!-- Maison de poupée -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/manuels/pro_man_maison4.jpg" alt="Maison vue 3/4">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/manuels/pro_man_maison2.jpg" alt="Maison vue de face">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/manuels/pro_man_maison3.jpg" alt="Maison vue de côté">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img class="gallery__img--portrait" src="image/manuels/pro_man_sacoche.jpg" alt="Sacoche Eastpak customisée">
+            </div>
+        </div>
+        <!-- Objets peints -->
+        <div class="gallery">
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/manuels/pro_man_badge.jpg" alt="Badges créés">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/manuels/pro_man_glass.jpg" alt="Verre et plat décorés">
+            </div>
+            <div class="gallery__item" onclick="openModal(this)">
+                <img src="image/manuels/pro_man_boxypot.jpg" alt="Boîte et pot à crayons">
+            </div>
+        </div>
 
+        <!-- Modal -->
+        <div class="modal" onclick="closeModal()">
+            <img class="modal-image" src="" alt="Image agrandie">
+        </div>
 
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_sacoche.jpg" alt="sacoche eastpak" class="portrait">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_badge.jpg" alt="badges">
-    </div>
-</div>
+    </main>
 
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
 
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_glass.jpg" alt="verre et plat">
-    </div>
-    <div class="image-container" onclick="openModal(this)">
-        <img src="image/manuels/pro_man_boxypot.jpg" alt="boite et pot à crayons">
-    </div>
-</div>
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="src/javascript/open_modal.js"></script>
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
 
-
-<div class="modal"  onclick="closeModal()">
-    <img class="modal-image" src="">
-</div>
-<script src="javascript/open_modal.js"></script>
-
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
-
-  </body>
-</div>
-</html> 
+</body>
+</html>

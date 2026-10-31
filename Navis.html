@@ -1,73 +1,97 @@
 <!DOCTYPE HTML>
 <html lang="fr">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/basic.css" rel="stylesheet" type="text/css">
         <link href="css/modal.css" rel="stylesheet" type="text/css">
+        <link href="css/livre.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>La Navis — Perrine Goget</title>
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-    <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-    <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="conteneur_page">
-    <h1>
-    Navis
-    </h1>
-<div class="mon_texte">
-    <p>Je me suis amusée à décliner mon premier projet sur Illustrator <br>sous forme de tee-shirt et de poster.
-    </p>
-</div>
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
-<div class="grille">
-    <div class="image-container" onclick="openModal(this)">
-        <img class= "portrait" src="image/Navis/navis_mockup.png" alt="navis">
+    <h1>Navis</h1>
+    <h2>Je me suis amusée à décliner mon premier projet sur Illustrator <br>sous forme de tee-shirt et de poster.</h2>
+
+    <!-- Mockups -->
+    <div class="gallery">
+        <div class="gallery__item" onclick="openModal(this)">
+            <img class= "portrait" src="image/Navis/navis_mockup.png" alt="navis">
     </div>    
-    <div class="image-container" onclick="openModal(this)">
+    <div class="gallery__item" onclick="openModal(this)">
         <img class= "portrait" src="image/Navis/tee_hirt_navis.png" alt="navis">
     </div>
 </div>
 
-<div class="mon_texte">
-    <p>Notre premier projet sur Illustrator consistait à reproduire l'image de Navis. <br> J'ai souhaité ajouter une touche de créativité sur cet exercice. <br> Je me suis inspirée du personnage de Lux dans le jeux vidéo League of Legend pour reproduire l'image de la navis.
-    </p>
-</div>
+    <!-- Texte intro -->
+        <div class="text-block">
+            <p>Notre premier projet sur Illustrator consistait à reproduire l'image de Navis. <br> J'ai souhaité ajouter une touche de créativité sur cet exercice. 
+                <br> Je me suis inspirée du personnage de Lux dans le jeux vidéo League of Legend pour reproduire l'image de la navis.
+            </p>
+        </div>
 
-<div class="grille">
-	<div class="image-container" onclick="openModal(this)">
-        <img class= "portrait" src="image/Navis/AI_navis.png" alt="navis">
+    <!-- Mockups -->
+    <div class="gallery">
+        <div class="gallery__item" onclick="openModal(this)">
+            <img class= "portrait" src="image/Navis/AI_navis.png" alt="navis">
+        </div>
+        <div class="gallery__item" onclick="openModal(this)">
+            <img class= "portrait" src="image/Navis/navis_base.png" alt="navis">
+        </div>
+        <div class="gallery__item" onclick="openModal(this)">
+            <img class= "portrait" src="image/Navis/inspi_luz.png" alt="navis">
+        </div>
+        </div>
     </div>
-        <div class="image-container" onclick="openModal(this)">
-        <img class= "portrait" src="image/Navis/navis_base.png" alt="navis">
-    </div>
-        <div class="image-container" onclick="openModal(this)">
-        <img class= "portrait" src="image/Navis/inspi_luz.png" alt="navis">
-    </div>
-</div>
 
 
+        <!-- Modal -->
+        <div class="modal" onclick="closeModal()">
+            <img class="modal-image" src="" alt="Image agrandie">
+        </div>
 
-<div class="modal"  onclick="closeModal()">
-    <img class="modal-image" src="">
-</div>
+    </main>
 
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
 
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="src/javascript/open_modal.js"></script>
+    <script src="src/javascript/livre_guide.js"></script>
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
 
-
-
-<script src="javascript/open_modal.js"></script>
-
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
-</div>
-  </body>
-</html> 
+</body>
+</html>

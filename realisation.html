@@ -2,88 +2,92 @@
 <html lang="fr">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-         <link href="css/test.css" rel="stylesheet" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projets Perso — Perrine Goget</title>
+        <link href="css/grid.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
 
 <body>
 
-<div class="banner-construction">
-    <a href="index.html" class="navig url"><i class="fa-solid fa-house"></i> Accueil</a>
-                 <a href="pro.html" class="navig url"><i class="fa-solid fa-briefcase"></i> Projets Pro !</a>
-                  <a href="realisation.html" class="navig url"><i class="fa-solid fa-jedi"></i> Projets Perso !</a>     
-</div>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar__">
+            <button class="navbar__burger" id="burger" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar__menu" id="navMenu">
+                <a href="index.html"       class="navbar__link url"><i class="fa-solid fa-house"></i>    Accueil</a>
+                <a href="pro.html"         class="navbar__link url"><i class="fa-solid fa-briefcase"></i> Projets Pro</a>
+                <a href="realisation.html" class="navbar__link url"><i class="fa-solid fa-jedi"></i>     Projets Perso</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="conteneur_page">
+    <!-- ===================== CONTENU PRINCIPAL ===================== -->
+    <main class="page-content">
 
-    <h1 id="page_projet"> 
-        Mes projets Perso !
-    </h1>
+        <h1>Mes projets Perso !</h1>
 
-<div class="container">
-    <div class="grid">
+        <div class="projects-container">
+            <div class="projects-grid">
 
-      <a href="coque-telephone.html" class="card">
-        <img src="image/pro/avant_fermer.png" alt="Projet 4">
-        <div class="overlay">
-          <h3>Ma coque de téléphone !</h3>
+                <a href="coque-telephone.html" class="project-card">
+                    <img src="image/pro/avant_fermer.png" alt="Ma coque de téléphone">
+                    <div class="project-card__overlay"><h3>Ma coque de téléphone !</h3></div>
+                </a>
+
+                <a href="boisson_defis.html" class="project-card">
+                    <img src="image/pro/poster_1.png" alt="Défis entre amis">
+                    <div class="project-card__overlay"><h3>Défis entre amis</h3></div>
+                </a>
+
+                <a href="photos.html" class="project-card">
+                    <img src="image/photos/photo_10.jpg" alt="Mes photos">
+                    <div class="project-card__overlay"><h3>Mes photos</h3></div>
+                </a>
+
+                <a href="dessins.html" class="project-card">
+                    <img src="image/dessins/dess_im_maomao_aqua.jpg" alt="Mes dessins">
+                    <div class="project-card__overlay"><h3>Mes dessins</h3></div>
+                </a>
+
+                <a href="projet_manuel.html" class="project-card">
+                    <img src="image/manuels/pro_man_vitre2.jpg" alt="Projets manuels">
+                    <div class="project-card__overlay"><h3>Côté manuels</h3></div>
+                </a>
+
+                <a href="photoshop.html" class="project-card">
+                    <img src="image/phtotoshop/PS_fantome.jpg" alt="Photoshop">
+                    <div class="project-card__overlay"><h3>Photoshop</h3></div>
+                </a>
+
+            </div>
         </div>
-      </a>
 
-      <a href="boisson_defis.html" class="card">
-        <img src="image/pro/poster_1.png" alt="Projet 4">
-        <div class="overlay">
-          <h3>Défis entre amis</h3>
-        </div>
-      </a>
+    </main>
 
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer_projet">
+        © Créé par Perrine Goget.
+        <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/">
+            <img src="image/link.png" alt="Logo LinkedIn" class="logo" id="linki">
+        </a>
+    </footer>
 
-      <a href="photos.html" class="card">
-        <img src="image/photos/photo_10.jpg" alt="Projet 1">
-        <div class="overlay">
-          <h3>Mes photos</h3>
-        </div>
-      </a>
-      <a href="dessins.html" class="card">
-        <img src="image/dessins/dess_im_maomao_aqua.jpg" alt="Projet 2">
-        <div class="overlay">
-          <h3>Mes dessins</h3>
-        </div>
-      </a>
-      <a href="projet_manuel.html" class="card">
-        <img src="image/manuels/pro_man_vitre2.jpg" alt="Projet 3">
-        <div class="overlay">
-          <h3>Côté manuels</h3>
-        </div>
-      </a>
-      <a href="photoshop.html" class="card">
-        <img src="image/phtotoshop/PS_fantome.jpg" alt="Projet 4">
-        <div class="overlay">
-          <h3>Photoshop</h3>
-        </div>
-      </a>
+    <!-- ===================== SCRIPTS ===================== -->
+    <script>
+        const burger  = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-open');
+            navMenu.classList.toggle('is-open');
+        });
+    </script>
 
-    </div>
-  </div>
-
-
-
-
-
-
-
-<footer id="footer_projet"> © Créé par Perrine Goget. 
-    <a href="https://www.linkedin.com/in/perrine-goget-7090aa32b/"> 
-        <img src="image/link.png" alt="Logo de linkedIn" class="logo" id="linki">
-    </a> 
-</footer>
-
-</div>
-  </body>
-</html> 
-
-
-
-
-
+</body>
+</html>

@@ -133,6 +133,7 @@ video {
     height: auto;
     object-fit: contain;
     border-radius: 8px;
+    max-width: 600px;
 }
 
 /* Variantes dans la modal */
@@ -165,5 +166,5 @@ video {
     .gallery__img--medium    { width: 42vw !important; }
     .gallery__img--portrait  { width: 42vw !important; }
     .gallery                 { flex-direction: column; align-items: center; }
-    .modal .modal-image      { width: 95vw; }
+    .modal .modal-image      { width: 95vw; max-width: 600px; }
 }

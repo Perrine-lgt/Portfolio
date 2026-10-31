@@ -39,7 +39,7 @@
 }
 
 /* --- Variantes de taille --- */
-.gallery__img--large {
+/*.gallery__img--large {
     width: min(700px, 90vw) !important;
     aspect-ratio: unset !important;
     object-fit: contain !important;
@@ -74,7 +74,7 @@
     height: 460px !important;
     object-fit: cover;
 }
-
+*/
 
 /* ==========================================================================
    2. VIDÉOS
@@ -116,47 +116,22 @@ video {
 .modal {
     display: none;
     position: fixed;
+    inset: 0;                      /* colle la modal aux 4 bords de la fenêtre */
     z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     justify-content: center;
     align-items: center;
+    padding: 2vh 2vw;              /* petite marge autour de l'image */
+    box-sizing: border-box;
     cursor: pointer;
 }
 
-/* Image par défaut dans la modal */
 .modal .modal-image {
-    width: auto;
-    height: auto;
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;           /* l'image s'agrandit ou se réduit pour tenir entière */
     border-radius: 8px;
 }
-
-/* Variantes dans la modal */
-.modal .gallery__img--large {
-    width: 80vw !important;
-    max-width: 100vw !important;
-    object-fit: contain !important;
-}
-
-.modal .gallery__img--square {
-    width: 80vw !important;
-    aspect-ratio: 1/1;
-    object-fit: cover !important;
-}
-
-/* IDs spécifiques (gourde, dague) */
-.modal #gourde,
-.modal #dague {
-    width: 100vw;
-    height: auto;
-}
-
 
 /* ==========================================================================
    5. MEDIA QUERIES
@@ -167,5 +142,4 @@ video {
     .gallery__img--medium    { width: 42vw !important; }
     .gallery__img--portrait  { width: 42vw !important; }
     .gallery                 { flex-direction: column; align-items: center; }
-    .modal .modal-image      { max-width: 95vw; max-height: 85vh; }
 }

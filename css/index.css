@@ -277,6 +277,7 @@ Grille des cartes — mobile first
     border: 1px solid var(--color-card-border);
     box-shadow: var(--shadow-card-neutral);
     border-radius: var(--radius-lg);
+    background-color: #ffffff;
 }
 
 .main__section-art__card-left,
